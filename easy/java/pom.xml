@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>es.ing</groupId>
-  <artifactId>acronym</artifactId>
+  <artifactId>ef-challenges-kings-aka-coding-league</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>acronym</name>
+  <name>ef-challenges-kings-aka-coding-league</name>
 
   <properties>
     <junit-jupiter.version>5.5.2</junit-jupiter.version>
