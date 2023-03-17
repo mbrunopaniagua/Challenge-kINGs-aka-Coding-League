@@ -1,5 +1,6 @@
-package es.ing.challenge;
+package es.ing.previous;
 
+import es.ing.previous.ArmstrongNumbers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
