@@ -1,5 +1,6 @@
-package es.ing.challenge;
+package es.ing.previous;
 
+import es.ing.previous.Leap;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

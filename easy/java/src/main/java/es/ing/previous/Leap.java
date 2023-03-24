@@ -1,4 +1,4 @@
-package es.ing.challenge;
+package es.ing.previous;
 
 class Leap {
     boolean isLeapYear(int year) {
