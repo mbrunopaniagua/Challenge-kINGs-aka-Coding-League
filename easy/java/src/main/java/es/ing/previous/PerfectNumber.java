@@ -1,4 +1,4 @@
-package es.ing.challenge;
+package es.ing.previous;
 
 public class PerfectNumber {
 

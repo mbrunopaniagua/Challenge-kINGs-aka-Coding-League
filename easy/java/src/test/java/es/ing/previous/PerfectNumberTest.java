@@ -1,5 +1,6 @@
-package es.ing.challenge;
+package es.ing.previous;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,7 +9,7 @@ public class PerfectNumberTest {
 
     @Test
     public void testSmallPerfectNumberIsClassifiedCorrectly() {
-        assertEquals(Classification.PERFECT, new PerfectNumber(6).getClassification());
+        Assertions.assertEquals(Classification.PERFECT, new PerfectNumber(6).getClassification());
     }
 
     
