@@ -1,5 +1,5 @@
 // import { rna } from "./rna.js";
-const rna = require("./rna.js");
+const transcribe = require("./rna.js");
 
 describe("RNA function", () => {
   test('Empty RNA sequence', () => {
