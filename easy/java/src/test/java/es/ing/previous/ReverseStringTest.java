@@ -1,5 +1,6 @@
-package es.ing.challenge;
+package es.ing.previous;
 
+import es.ing.previous.ReverseString;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
