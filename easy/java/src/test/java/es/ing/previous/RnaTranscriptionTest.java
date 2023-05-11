@@ -1,4 +1,4 @@
-package es.ing.challenge;
+package es.ing.previous;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
