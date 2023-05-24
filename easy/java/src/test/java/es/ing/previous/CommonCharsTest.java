@@ -1,5 +1,6 @@
-package es.ing.challenge;
+package es.ing.previous;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,7 +9,7 @@ class CommonCharsTest {
 
     @Test
     public void shouldReturnAnEmptyStringWhenOneOfTheStringsIsEmpty() {
-        assertEquals(new CommonChars().longestCommonChars("", "test"), "");
+        Assertions.assertEquals(new CommonChars().longestCommonChars("", "test"), "");
         assertEquals(new CommonChars().longestCommonChars("test", ""), "");
     }
 

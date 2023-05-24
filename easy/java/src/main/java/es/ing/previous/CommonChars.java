@@ -1,4 +1,4 @@
-package es.ing.challenge;
+package es.ing.previous;
 
 public class CommonChars {
     public String longestCommonChars(String s1, String s2) {
