@@ -1,0 +1,9 @@
+{
+  "name": "semifinal",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "author": "Kings League governors",
+  "license": "ISC"
+}
