@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EF Challenge kINGs aka Coding League</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+        color: #333;
+      }
+      header {
+        background-color: #ff6200;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+      main {
+        max-width: 1024px;
+        margin: 0 auto;
+      }
+      h1 {
+        margin: 0;
+      }
+      h2 {
+        text-align: center;
+      }
+      nav {
+        background-color: #ff6200;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        display: inline-block;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      section {
+        padding: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #ff6200;
+        color: white;
+      }
+      .team-info {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .team-name {
+        flex-grow: 1;
+      }
+      img {
+        width: 48px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="logo.png" alt="EF Challenge kINGs aka Coding League" height="90" />
+      <h1>EF Challenge kINGs aka Coding League</h1>
+      <nav>
+        <a href="#league-table">League Table</a>
+        <a href="#scores-fixtures">Scores & Fixtures</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="league-table">
+        <h2>League Table</h2>
+        <table>
+          <tr>
+            <th>Team</th>
+            <th>Played</th>
+            <th>Won</th>
+            <th>Lost</th>
+            <th>Points</th>
+          </tr>
+        </table>
+      </section>
+
+      <section id="scores-fixtures">
+        <h2>Scores & Fixtures</h2>
+      </section>
+    </main>
+    
+    <script>
+      // Load JSON data
+      const teams = [
+        {
+          "team": "FrontTroopers",
+          "played": 7,
+          "won": 5,
+          "lost": 2,
+          "points": 15,
+          "players": [
+            {
+              "name": "Ivan Isayenko",
+              "avatar": "players/ivan.png"
+            },
+            {
+              "name": "Macarena Jiménez Benitez",
+              "avatar": "players/macarena.png"
+            }
+          ]
+        },
+        {
+          "team": "Equipo Fernando",
+          "played": 7,
+          "won": 4,
+          "lost": 2,
+          "points": 12,
+          "players": [
+            {
+              "name": "Cesar Augusto Canales Peralta",
+              "avatar": "players/cesar canales.png"
+            },
+            {
+              "name": "Fermin Gallego de la Sacristana",
+              "avatar": "players/fermin.png"
+            },
+            {
+              "name": "Fernando Perez Morente",
+              "avatar": "players/fernando.png"
+            }
+          ]
+        },
+        {
+          "team": "Tsubasa New Team",
+          "played": 7,
+          "won": 3,
+          "lost": 3,
+          "points": 9,
+          "players": [
+            {
+              "name": "Christian Bourne",
+              "avatar": "players/christian.png"
+            },
+            {
+              "name": "Cesar Manrique Sanchez",
+              "avatar": "players/cesar manrique.png"
+            },
+            {
+              "name": "Manel Regino Marquez Bonilla",
+              "avatar": "players/manel.png"
+            }
+          ]
+        },
+        {
+          "team": "Los Cazabagres",
+          "played": 7,
+          "won": 3,
+          "lost": 4,
+          "points": 9,
+          "players": [
+            {
+              "name": "Oier Arroniz",
+              "avatar": "players/oier.png"
+            },
+            {
+              "name": "Javier Cuervas Muñoz",
+              "avatar": "players/javier.png"
+            },
+            {
+              "name": "Francisco Jose Mira Moya",
+              "avatar": "players/francisco.png"
+            }
+          ]
+        },
+        {
+          "team": "Los FAFbulosos",
+          "played": 7,
+          "won": 2,
+          "lost": 5,
+          "points": 7,
+          "players": [
+            {
+              "name": "Yrving David Conde Cubas",
+              "avatar": "players/david conde.png"
+            },
+            {
+              "name": "Richard Jesus Hernandez Afonso",
+              "avatar": "players/richard.png"
+            },
+            {
+              "name": "Miguel Martin Fernandez-Corugedo",
+              "avatar": "players/miguel.png"
+            }
+          ]
+        },
+        {
+          "team": "Shadow DooM",
+          "played": 7,
+          "won": 2,
+          "lost": 3,
+          "points": 6,
+          "players": [
+            {
+              "name": "Daniel Fernandez-Vegue Gomez",
+              "avatar": "players/daniel.png"
+            },
+            {
+              "name": "Alejandro Gonzalez Franco",
+              "avatar": "players/alejandro.png"
+            },
+            {
+              "name": "Jose Alberto Rodriguez Bravo",
+              "avatar": "players/alberto.png"
+            }
+          ]
+        },
+        {
+          "team": "Gravesens",
+          "played": 7,
+          "won": 2,
+          "lost": 3,
+          "points": 6,
+          "players": [
+            {
+              "name": "Borja Asensio Calvo",
+              "avatar": "players/borja.png"
+            },
+            {
+              "name": "David Picon Porras",
+              "avatar": "players/david picon.png"
+            },
+            {
+              "name": "Enrique Antonio Vallejo Sanz",
+              "avatar": "players/enrique.png"
+            }
+          ]
+        },
+        {
+          "team": "Nothingam Prisa",
+          "played": 7,
+          "won": 2,
+          "lost": 4,
+          "points": 6,
+          "players": [
+            {
+              "name": "Sergio Ballestero Martin",
+              "avatar": "players/sergio.png"
+            },
+            {
+              "name": "Patricio Martin Sanchez-Rubio",
+              "avatar": "players/patricio.png"
+            },
+            {
+              "name": "David Palomar Delgado",
+              "avatar": "players/david palomar.png"
+            }
+          ]
+        }
+      ];
+
+      const dates = [
+        {
+          "date": "24 MAR",
+          "matches": [
+            { "team1": "Tsubasa New Team", "score": "1 - 0", "team2": "Nothingam Prisa", "referee": "Mario" },
+            { "team1": "Los Cazabagres", "score": "1 - 0", "team2": "Shadow DooM", "referee": "Ivan" },
+            { "team1": "Gravesens", "score": "0 - 1", "team2": "Los FAFbulosos", "referee": "JP" },
+            { "team1": "FrontTroopers", "score": "0 - 1", "team2": "Equipo Fernando", "referee": "Cesar" }
+          ]
+        },
+        {
+          "date": "31 MAR",
+          "matches": [
+            { "team1": "Tsubasa New Team", "score": "0 - 0", "team2": "Los Cazabagres", "referee": "Mario" },
+            { "team1": "Nothingam Prisa", "score": "0 - 0", "team2": "Shadow DooM", "referee": "Ivan" },
+            { "team1": "Gravesens", "score": "0 - 0", "team2": "FrontTroopers", "referee": "JP" },
+            { "team1": "Los FAFbulosos", "score": "0 - 1", "team2": "Equipo Fernando", "referee": "Cesar" }
+          ]
+        },
+        {
+          "date": "14 APR",
+          "matches": [
+            { "team1": "Tsubasa New Team", "score": "0 - 1", "team2": "Shadow DooM", "referee": "Mario" },
+            { "team1": "Nothingam Prisa", "score": "1 - 0", "team2": "Los Cazabagres", "referee": "Mario" },
+            { "team1": "Gravesens", "score": "1 - 0", "team2": "Equipo Fernando", "referee": "JP" },
+            { "team1": "Los FAFbulosos", "score": "0 - 1", "team2": "FrontTroopers", "referee": "Cesar" }
+          ]
+        },
+        {
+          "date": "21 APR",
+          "matches": [
+            { "team1": "Tsubasa New Team", "score": "1 - 0", "team2": "Gravesens", "referee": "Mario" },
+            { "team1": "Nothingam Prisa", "score": "1 - 0 *", "team2": "Los FAFbulosos", "referee": "Ivan" },
+            { "team1": "Shadow DooM", "score": "0 - 1", "team2": "Equipo Fernando", "referee": "JP" },
+            { "team1": "Los Cazabagres", "score": "0 - 1", "team2": "FrontTroopers", "referee": "Cesar" },
+            { "team1": "* 1 point by extra time for Los FAFbulosos", "score": "" }
+          ]
+        },
+        {
+          "date": "28 APR",
+          "matches": [
+            { "team1": "Tsubasa New Team", "score": "1 - 0", "team2": "Los FAFbulosos", "referee": "Mario" },
+            { "team1": "Nothingam Prisa", "score": "0 - 1", "team2": "Equipo Fernando", "referee": "Ivan" },
+            { "team1": "Shadow DooM", "score": "0 - 1", "team2": "FrontTroopers", "referee": "JP" },
+            { "team1": "Los Cazabagres", "score": "0 - 1", "team2": "Gravesens", "referee": "Cesar" }
+          ]
+        },
+        {
+          "date": "05 MAY",
+          "matches": [
+            { "team1": "Tsubasa New Team", "score": "0 - 0", "team2": "Equipo Fernando", "referee": "Mario" },
+            { "team1": "Nothingam Prisa", "score": "0 - 1", "team2": "FrontTroopers", "referee": "Ivan" },
+            { "team1": "Shadow DooM", "score": "1 - 0", "team2": "Gravesens", "referee": "JP" },
+            { "team1": "Los Cazabagres", "score": "1 - 0", "team2": "Los FAFbulosos", "referee": "Cesar" }
+          ]
+        },
+        {
+          "date": "12 MAY",
+          "matches": [
+            { "team1": "Tsubasa New Team", "score": "0 - 1", "team2": "FrontTroopers", "referee": "Mario" },
+            { "team1": "Nothingam Prisa", "score": "13:00", "team2": "Gravesens", "referee": "Ivan" },
+            { "team1": "Shadow DooM", "score": "0 - 1", "team2": "Los FAFbulosos", "referee": "JP" },
+            { "team1": "Los Cazabagres", "score": "13:00", "team2": "Equipo Fernando", "referee": "Cesar" }
+          ]
+        }
+      ];
+
+      const tableBody = document.querySelector('#league-table tbody');
+      // Ordering by points
+      teams.sort((teamA, teamB) => teamB.points - teamA.points);
+      // Rendering the league table
+      teams.forEach(team => {
+        let playersHtml = '';
+        team.players.forEach(player => {
+          playersHtml += `<img src="${player.avatar}" alt="${player.name}" title="${player.name}" />`
+        });
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td class="team-info">
+            <span class="team-name">${team.team}</span>
+            ${playersHtml}
+          </td>
+          <td>${team.played}</td>
+          <td>${team.won}</td>
+          <td>${team.lost}</td>
+          <td>${team.points}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+
+      const scoresFixturesSection = document.querySelector('#scores-fixtures');
+      dates.forEach(date => {
+        const dateTable = document.createElement('table');
+        const dateHeader = document.createElement('h3');
+        dateHeader.textContent = date.date;
+
+        const headerRow = document.createElement('tr');
+        headerRow.innerHTML = `
+          <th>Team 1</th>
+          <th>vs</th>
+          <th>Team 2</th>
+          <th>Referee</th>
+        `;
+        dateTable.appendChild(headerRow);
+
+        date.matches.forEach(match => {
+          const matchRow = document.createElement('tr');
+          matchRow.innerHTML = `
+            <td>${match.team1}</td>
+            <td>${match.score}</td>
+            <td>${match.team2}</td>
+            <td>${match.referee}</td>
+          `;
+          dateTable.appendChild(matchRow);
+        });
+
+        scoresFixturesSection.appendChild(dateHeader);
+        scoresFixturesSection.appendChild(dateTable);
+      });
+    </script>
+  </body>
+</html>
